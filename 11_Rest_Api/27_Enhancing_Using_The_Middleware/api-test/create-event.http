@@ -1,0 +1,10 @@
+POST http://localhost:9090/events
+content-type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3Q1QGV4YW1wbGUuY29tIiwiZXhwIjoxNzQ2NjI1MTU2LCJ1c2VySWQiOjR9.Bfg3OSKYhKy-PdkoIYy10MlgmwIa6wDd40NVFDXYKZo
+
+{
+  "name": "Test event KZA_4",
+  "description": "test event KZA_4",
+  "location": "test location KZA_4",
+  "dateTime": "2025-05-06T15:30:00.000Z"
+}
