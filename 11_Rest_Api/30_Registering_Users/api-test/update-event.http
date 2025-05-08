@@ -1,0 +1,10 @@
+PUT http://localhost:9090/events/17
+content-type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QzQGV4YW1wbGUuY29tIiwiZXhwIjoxNzQ2Njc4MjM5LCJ1c2VySWQiOjN9.JUeX7GThUXmKW_BRvGh78xxH_HwYT45tzpzKSw7tIa0
+
+{
+  "name": "Updated test event 17",
+  "description": "A test event updated 17",
+  "location": "Test location (Updated!) 17",
+  "dateTime": "2025-01-01T15:30:00Z"
+}
