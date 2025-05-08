@@ -1,0 +1,2 @@
+DELETE http://localhost:9090/events/20/register
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQGV4YW1wbGUuY29tIiwiZXhwIjoxNzQ2NzAyMDM4LCJ1c2VySWQiOjJ9.EvHgshwYlXe3_673MLddjy91WXwkhJTkwWEXEJbpRUQ

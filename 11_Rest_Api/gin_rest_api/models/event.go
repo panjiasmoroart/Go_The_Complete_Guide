@@ -1,6 +1,7 @@
 package models
 
 import (
+	"fmt"
 	"gin_rest_api/db"
 	"time"
 )
@@ -119,4 +120,36 @@ func (e Event) Register(userId int64) error {
 	_, err = stmt.Exec(e.ID, userId)
 
 	return err
+}
+
+func (e Event) CancelRegistration2(userId int64) error {
+	query := "DELETE FROM registrations WHERE event_id = ? AND user_id = ?"
+	stmt, err := db.DB.Prepare(query)
+	if err != nil {
+		return err
+	}
+	defer stmt.Close()
+
+	_, err = stmt.Exec(e.ID, userId)
+
+	return err
+}
+
+func (e Event) CancelRegistration(userId int64) error {
+	query := "DELETE FROM registrations WHERE event_id = ? AND user_id = ?"
+	result, err := db.DB.Exec(query, e.ID, userId)
+	if err != nil {
+		return fmt.Errorf("failed to execute delete query: %w", err)
+	}
+
+	rowsAffected, err := result.RowsAffected()
+	if err != nil {
+		return fmt.Errorf("failed to get affected rows: %w", err)
+	}
+
+	if rowsAffected == 0 {
+		return fmt.Errorf("no registration found to cancel")
+	}
+
+	return nil
 }
